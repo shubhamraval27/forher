@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For My Beautiful Girl, Rheanne 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    /* ===== Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top left, #ffe6f2, #ffd6ea, #ffeaf5);
+      min-height: 100vh;
+      color: #4b1f3a;
+      display: flex;
+      justify-content: center;
+      padding: 20px 10px 40px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      padding: 22px 18px 26px;
+      box-shadow: 0 18px 40px rgba(255, 150, 190, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Floating hearts in background */
+    .container::before,
+    .container::after {
+      content: "❤";
+      position: absolute;
+      font-size: 46px;
+      color: rgba(255, 170, 200, 0.26);
+      animation: float 8s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    .container::before {
+      top: -10px;
+      right: 12px;
+    }
+
+    .container::after {
+      bottom: -10px;
+      left: 16px;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-10px) scale(1.08);
+      }
+      100% {
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: rgba(255, 192, 203, 0.2);
+      color: #b83268;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ff4b7d;
+    }
+
+    h1 {
+      font-size: 24px;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    h1 span.highlight {
+      background: linear-gradient(120deg, #ff9ac2, #ff6fa9);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #8a476f;
+      margin-bottom: 4px;
+    }
+
+    .typewriter {
+      font-size: 12px;
+      color: #b35b84;
+      min-height: 18px;
+      margin-bottom: 8px;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(to right, transparent, #ffd0e5, transparent);
+      margin: 10px 0 14px;
+    }
+
+    /* ===== Music Button ===== */
+    .music-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .music-btn {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 11px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 192, 203, 0.25);
+      color: #b03267;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(4px);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+      box-shadow: 0 6px 14px rgba(255, 150, 190, 0.35);
+    }
+
+    .music-btn:active {
+      transform: translateY(1px) scale(0.97);
+      box-shadow: 0 3px 8px rgba(255, 150, 190, 0.4);
+      background: rgba(255, 192, 203, 0.4);
+    }
+
+    .music-btn span {
+      font-size: 14px;
+    }
+
+    /* ===== Photo Row ===== */
+    .photo-row {
+      display: grid;
+      grid-template-columns: 2fr 1.2fr;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .photo-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #000;
+      height: 150px;
+      cursor: pointer;
+      transform: translateZ(0);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 8px 18px rgba(255, 160, 200, 0.4);
+    }
+
+    .photo-card:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 10px 22px rgba(255, 160, 210, 0.5);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      display: block;
+    }
+
+    .photo-card.small {
+      height: 150px;
+    }
+
+    .photo-label {
+      position: absolute;
+      bottom: 8px;
+      left: 10px;
+      padding: 3px 8px;
+      font-size: 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.4);
+      color: #ffeaf4;
+      backdrop-filter: blur(4px);
+    }
+
+    /* ===== Section Title ===== */
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #b03267;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section-title span.line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, #ffd1e6, transparent);
+    }
+
+    /* ===== Quotes Section ===== */
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    @media (min-width: 420px) {
+      .quotes-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .quote-card {
+      background: #fff7fb;
+      border-radius: 16px;
+      padding: 10px 11px;
+      border: 1px solid rgba(255, 180, 210, 0.6);
+      font-size: 12px;
+      line-height: 1.5;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-card::before {
+      content: "❝";
+      position: absolute;
+      top: -8px;
+      right: 6px;
+      font-size: 32px;
+      color: rgba(255, 190, 215, 0.35);
+    }
+
+    .quote-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #c04d7e;
+      margin-bottom: 4px;
+    }
+
+    /* ===== Memory Lane (extra photos) ===== */
+    .memory-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .memory-card {
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 170, 210, 0.7);
+      font-size: 11px;
+    }
+
+    .memory-card-inner {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .memory-card img {
+      width: 100%;
+      height: 90px;
+      object-fit: contain;
+      background: #000;
+      display: block;
+    }
+
+    .memory-caption {
+      padding: 6px 7px 7px;
+      font-size: 11px;
+      color: #ffe6f6;
+      background: #1a0410;
+    }
+
+    /* ===== Two-month Card ===== */
+    .anniv-card {
+      background: linear-gradient(135deg, #ffe3f4, #ffd1ec);
+      border-radius: 18px;
+      padding: 11px 12px 12px;
+      border: 1px solid rgba(255, 130, 190, 0.7);
+      margin-bottom: 18px;
+      font-size: 12px;
+      color: #6a3150;
+      line-height: 1.6;
+      animation: glow 2.2s ease-in-out infinite;
+    }
+
+    .anniv-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b03267;
+      margin-bottom: 6px;
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 120, 180, 0.4);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 18px 2px rgba(255, 120, 180, 0.7);
+        transform: scale(1.01);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 120, 180, 0.4);
+        transform: scale(1);
+      }
+    }
+
+    /* ===== Our Story Timeline ===== */
+    .timeline {
+      margin-bottom: 18px;
+      border-left: 2px solid rgba(255, 150, 210, 0.8);
+      padding-left: 10px;
+    }
+
+    .timeline-item {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 10px;
+      font-size: 12px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -12px;
+      top: 4px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #ff4b8c;
+      box-shadow: 0 0 0 3px rgba(255, 150, 210, 0.4);
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      color: #b03267;
+      margin-bottom: 2px;
+    }
+
+    .timeline-date {
+      font-size: 10px;
+      color: #b97a9a;
+      margin-bottom: 3px;
+    }
+
+    /* ===== Long Distance Block ===== */
+    .ld-card {
+      background: linear-gradient(135deg, #ffe7f2, #ffd6ed);
+      border-radius: 18px;
+      padding: 11px 12px 12px;
+      border: 1px solid rgba(255, 140, 190, 0.6);
+      margin-bottom: 18px;
+    }
+
+    .ld-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #b03267;
+      margin-bottom: 6px;
+    }
+
+    .ld-text {
+      font-size: 12px;
+      color: #6a3150;
+      line-height: 1.6;
+    }
+
+    /* ===== 10 Reasons Section ===== */
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    @media (min-width: 420px) {
+      .reasons-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .reason-card {
+      background: #fff0f7;
+      border-radius: 14px;
+      padding: 8px 10px;
+      font-size: 12px;
+      line-height: 1.5;
+      border: 1px solid rgba(255, 160, 205, 0.6);
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+
+    .reason-number {
+      font-weight: 700;
+      font-size: 11px;
+      color: #ff4b8c;
+      margin-top: 2px;
+    }
+
+    /* ===== Little Promises ===== */
+    .promises-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    .promise-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 12px;
+      background: #fff7fb;
+      border-radius: 14px;
+      padding: 7px 9px;
+      border: 1px solid rgba(255, 180, 215, 0.7);
+    }
+
+    .promise-icon {
+      font-size: 13px;
+      margin-top: 1px;
+    }
+
+    /* ===== Future Plans ===== */
+    .future-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      font-size: 12px;
+    }
+
+    .future-item {
+      background: #fff5fb;
+      border-radius: 14px;
+      padding: 7px 9px;
+      border: 1px solid rgba(255, 160, 220, 0.8);
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .future-icon {
+      font-size: 13px;
+      margin-top: 1px;
+    }
+
+    /* ===== Secret Message ===== */
+    .secret-card {
+      background: #fff5fb;
+      border-radius: 16px;
+      padding: 10px 11px 11px;
+      border: 1px dashed rgba(255, 140, 200, 0.9);
+      margin-bottom: 16px;
+      font-size: 12px;
+      color: #723154;
+    }
+
+    .secret-hint {
+      margin-bottom: 8px;
+    }
+
+    .secret-input-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .secret-input {
+      flex: 1;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 160, 210, 0.9);
+      padding: 6px 10px;
+      font-size: 12px;
+      outline: none;
+      background: #fff;
+    }
+
+    .secret-input:focus {
+      box-shadow: 0 0 0 2px rgba(255, 170, 220, 0.7);
+    }
+
+    .secret-btn {
+      font-size: 11px;
+      padding: 6px 12px;
+    }
+
+    .secret-message {
+      margin-top: 4px;
+      display: none;
+      line-height: 1.5;
+      color: #5e2444;
+    }
+
+    .secret-message.show {
+      display: block;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    .secret-error {
+      font-size: 11px;
+      color: #d12d63;
+      min-height: 14px;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(4px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== Random Note Button ===== */
+    .note-box {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px dashed rgba(255, 150, 200, 0.9);
+      padding: 10px 11px;
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .note-text {
+      margin-bottom: 9px;
+      color: #7e345a;
+      min-height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, #ff8fb8, #ff5b9b);
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 8px 18px rgba(255, 100, 160, 0.5);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.1s ease;
+    }
+
+    .btn:active {
+      transform: translateY(1px) scale(0.98);
+      box-shadow: 0 4px 10px rgba(255, 100, 160, 0.45);
+      filter: brightness(0.97);
+    }
+
+    .btn-emoji {
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 11px;
+      color: #b35b84;
+      margin-top: 4px;
+    }
+
+    footer span.me {
+      font-weight: 600;
+      color: #ff4b8c;
+    }
+
+    /* ===== Image Modal & Kisses ===== */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+      z-index: 50;
+    }
+
+    .modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      animation: pop 0.2s ease-out;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+
+    .modal-content img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      background: #000;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0.85);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border-radius: 999px;
+      border: none;
+      padding: 4px 8px;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .kiss {
+      position: fixed;
+      font-size: 22px;
+      pointer-events: none;
+      animation: floatKiss 1.4s ease-out forwards;
+      z-index: 60;
+    }
+
+    @keyframes floatKiss {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-10px, -60px) scale(1.6);
+      }
+    }
+
+    /* Floating heart button */
+    .float-heart-btn {
+      position: fixed;
+      right: 14px;
+      bottom: 18px;
+      z-index: 70;
+      border-radius: 999px;
+      padding: 8px 12px;
+      border: none;
+      background: linear-gradient(120deg, #ff76b0, #ff4b8c);
+      color: #fff;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 20px rgba(255, 80, 150, 0.6);
+      cursor: pointer;
+    }
+
+    .float-heart-btn:active {
+      transform: translateY(1px) scale(0.98);
+      box-shadow: 0 5px 10px rgba(255, 80, 150, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <!-- Background music: put a file named "death-bed.mp3" in the same folder -->
+  <audio id="bgMusic" loop>
+    <source src="death-bed.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="pill">
+        <span class="pill-dot"></span>
+        2 months of us 🩷
+      </div>
+      <h1>For my <span class="highlight">beautiful Rheanne</span> 💕</h1>
+      <p class="subtitle">
+        A tiny page for the girl who made the last two months feel like my favorite part of life.
+      </p>
+      <p id="typewriter" class="typewriter"></p>
+    </header>
+
+    <!-- Music control -->
+    <div class="music-wrap">
+      <button id="musicBtn" class="music-btn" onclick="playFromStart()">
+        <span>🎵</span>
+        <span id="musicLabel">Loading “death bed”...</span>
+      </button>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Main photos -->
+    <section class="photo-row">
+      <div class="photo-card">
+        <img
+          src="us1.JPG"
+          alt="Us together 1"
+        />
+        <span class="photo-label">My favorite view 💞</span>
+      </div>
+
+      <div class="photo-card small">
+        <img
+          src="us2.JPG"
+          alt="Us together 2"
+        />
+        <span class="photo-label">You &amp; me</span>
+      </div>
+    </section>
+
+    <!-- Cute Quotes About Her (random each load) -->
+    <section>
+      <div class="section-title">
+        You are so beautiful, Rheanne
+        <span class="line"></span>
+      </div>
+
+      <div class="quotes-grid">
+        <article class="quote-card">
+          <div class="quote-tag"></div>
+          <p></p>
+        </article>
+
+        <article class="quote-card">
+          <div class="quote-tag"></div>
+          <p></p>
+        </article>
+
+        <article class="quote-card">
+          <div class="quote-tag"></div>
+          <p></p>
+        </article>
+
+        <article class="quote-card">
+          <div class="quote-tag"></div>
+          <p></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Memory lane extra photos -->
+    <section>
+      <div class="section-title">
+        Little pieces of us
+        <span class="line"></span>
+      </div>
+
+      <div class="memory-grid">
+        <div class="memory-card">
+          <div class="memory-card-inner">
+            <img
+              src="memory1.JPG"
+              alt="Memory 1"
+            />
+          </div>
+          <div class="memory-caption">That day I couldn’t stop staring at you.</div>
+        </div>
+
+        <div class="memory-card">
+          <div class="memory-card-inner">
+            <img
+              src="memory2.PNG"
+              alt="Memory 2"
+            />
+          </div>
+          <div class="memory-caption">Our chaotic selfie that I secretly love.</div>
+        </div>
+
+        <div class="memory-card">
+          <div class="memory-card-inner">
+            <img
+              src="memory3.JPG"
+              alt="Memory 3"
+            />
+          </div>
+          <div class="memory-caption">You laughing so hard you couldn’t breathe.</div>
+        </div>
+
+        <div class="memory-card">
+          <div class="memory-card-inner">
+            <img
+              src="memory4.jpg"
+              alt="Memory 4"
+            />
+          </div>
+          <div class="memory-caption">The moment I knew: yeah, I’m gone for her.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two-month card -->
+    <section>
+      <div class="section-title">
+        Our little 2-month milestone
+        <span class="line"></span>
+      </div>
+      <div class="anniv-card">
+        <div class="anniv-label">happy 2 months, rheanne</div>
+        <p>
+          Two months of late-night talks, overthinking, comfort, and butterflies every time I see your name.
+          If just sixty days with you feels this special, I can’t imagine how beautiful the next months and years with you will be. 💗
+        </p>
+      </div>
+    </section>
+
+    <!-- Our story so far -->
+    <section>
+      <div class="section-title">
+        Our story so far
+        <span class="line"></span>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-title">The first “hey”</div>
+          <div class="timeline-date">The day everything quietly changed.</div>
+          <div>We had no idea that simple chats would turn into late nights and feelings we can’t explain.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-title">Somewhere in between</div>
+          <div class="timeline-date">Crush turned into something real.</div>
+          <div>I started waiting for your messages, your calls, your voice — and suddenly, you weren’t just “someone”.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-title">2 months of us</div>
+          <div class="timeline-date">Today</div>
+          <div>
+            We’re still figuring it out, still learning each other, but after two months,
+            one thing is clear: I don’t want this with anyone else.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Long Distance Love -->
+    <section>
+      <div class="section-title">
+        Even from far away
+        <span class="line"></span>
+      </div>
+
+      <div class="ld-card">
+        <div class="ld-label">long distance, same heart</div>
+        <p class="ld-text">
+          We might not be holding hands right now, but we’re still looking at
+          the same sky. Every notification, every call, every “I miss you”
+          is just my heart walking across the distance to hug yours.
+          <br /><br />
+          One day, this distance will just be a story we tell. Until then,
+          remember: I’m not going anywhere. I’m yours, completely. 💌
+        </p>
+      </div>
+    </section>
+
+    <!-- 10 Reasons -->
+    <section>
+      <div class="section-title">
+        10 reasons I’m obsessed with you
+        <span class="line"></span>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <span class="reason-number">1.</span>
+          <p>Your smile genuinely makes my whole day lighter.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-number">2.</span>
+          <p>You make even the boring days feel special just by being there.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-number">3.</span>
+          <p>You understand me in ways I don’t even understand myself.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-number">4.</span>
+          <p>The way you care about small things shows how big your heart is.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-number">5.</span>
+          <p>Even when we fight, I still choose you, every single time.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-number">6.</span>
+          <p>You support my chaos, my dreams, and my overthinking.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-number">7.</span>
+          <p>Your voice instantly feels like home, no matter where I am.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-number">8.</span>
+          <p>You’re cute, smart, annoying, funny – the perfect combo for me.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-number">9.</span>
+          <p>You never gave up on us, even when distance tried to scare us.</p>
+        </div>
+
+        <div class="reason-card">
+          <span class="reason-number">10.</span>
+          <p>Because it’s you. It was always you. And it will always be you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Little Promises -->
+    <section>
+      <div class="section-title">
+        Little promises to you
+        <span class="line"></span>
+      </div>
+
+      <ul class="promises-list">
+        <li class="promise-item">
+          <span class="promise-icon">🤝</span>
+          <span>I promise to never let distance make you feel unloved or alone.</span>
+        </li>
+        <li class="promise-item">
+          <span class="promise-icon">📞</span>
+          <span>I promise to pick up your calls, especially when you’re overthinking.</span>
+        </li>
+        <li class="promise-item">
+          <span class="promise-icon">💬</span>
+          <span>I promise to keep choosing honest conversations over silent doubts.</span>
+        </li>
+        <li class="promise-item">
+          <span class="promise-icon">🕰️</span>
+          <span>I promise that one day, all this waiting will make sense when I’m finally holding you.</span>
+        </li>
+        <li class="promise-item">
+          <span class="promise-icon">❤️</span>
+          <span>I promise it’s you. Not for now, not for a while, but for a long, long time.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Future plans together -->
+    <section>
+      <div class="section-title">
+        Things I want to do with you
+        <span class="line"></span>
+      </div>
+      <ul class="future-list">
+        <li class="future-item">
+          <span class="future-icon">🌆</span>
+          <span>Go on a real date where I can finally see you in front of me, not just on a screen.</span>
+        </li>
+        <li class="future-item">
+          <span class="future-icon">🎧</span>
+          <span>Share headphones, play our songs, and just exist next to you in comfortable silence.</span>
+        </li>
+        <li class="future-item">
+          <span class="future-icon">🌧️</span>
+          <span>Have a rainy day together, talking about everything and nothing, wrapped up in blankets.</span>
+        </li>
+        <li class="future-item">
+          <span class="future-icon">📸</span>
+          <span>Take a hundred ugly, cute, chaotic pictures of us and love every single one of them.</span>
+        </li>
+        <li class="future-item">
+          <span class="future-icon">🏡</span>
+          <span>Build a life where “goodnight” doesn’t mean call ending, it means you’re right here beside me.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Secret message -->
+    <section>
+      <div class="section-title">
+        Secret message just for you
+        <span class="line"></span>
+      </div>
+
+      <div class="secret-card">
+        <p class="secret-hint">
+          There’s a hidden message here. Try typing that word I always use when I say
+          I’ll love you for a long, long time. 💭
+        </p>
+
+        <div class="secret-input-row">
+          <input
+            id="secretInput"
+            class="secret-input"
+            type="text"
+            placeholder="Type the secret word..."
+          />
+          <button class="btn secret-btn" onclick="unlockSecret()">
+            Unlock
+          </button>
+        </div>
+        <div id="secretError" class="secret-error"></div>
+
+        <p id="secretMessage" class="secret-message">
+          Thank you for being you, for staying, for choosing me even when I overthink,
+          even when things aren’t easy. In just two months, you’ve made my life softer,
+          safer and so much more beautiful. I don’t say it enough, but I am really,
+          really grateful that it’s you, Rheanne. No matter how far you are, my heart
+          is already holding your hand. 💌
+        </p>
+      </div>
+    </section>
+
+    <!-- Random Love Note -->
+    <section class="note-box">
+      <div id="noteText" class="note-text">
+        Tap the button for a little love note 💗
+      </div>
+      <button class="btn" onclick="showRandomNote()">
+        <span class="btn-emoji">💝</span>
+        New love note
+      </button>
+    </section>
+
+    <footer>
+      Made with way too much love by
+      <span class="me">me</span> for
+      <span class="me">you, Rheanne</span>. 🌙
+    </footer>
+  </div>
+
+  <!-- Image popup modal -->
+  <div id="imageModal" class="modal" onclick="backdropClick(event)">
+    <div class="modal-content">
+      <img id="modalImg" src="" alt="Us together big" />
+      <button class="modal-close" onclick="closeModal(event)">✕</button>
+    </div>
+  </div>
+
+  <!-- Floating heart button -->
+  <button class="float-heart-btn" onclick="sendCenterKisses()">
+    <span>💋</span>
+    <span>Send you a kiss</span>
+  </button>
+
+  <script>
+    const typeLines = [
+      "Hi, pretty girl. I’m really happy it’s you.",
+      "Two months later and I still get butterflies seeing your name on my screen.",
+      "If you ever forget how special you are, just come back to this page.",
+      "Distance is annoying, but you are so, so worth it."
+    ];
+    let typeLineIndex = 0;
+    let typeCharIndex = 0;
+    let isPlaying = false;
+
+    function typewriterStep() {
+      const el = document.getElementById("typewriter");
+      if (!el) return;
+
+      const currentLine = typeLines[typeLineIndex];
+      el.textContent = currentLine.slice(0, typeCharIndex + 1);
+      typeCharIndex++;
+
+      if (typeCharIndex < currentLine.length) {
+        setTimeout(typewriterStep, 60);
+      } else {
+        setTimeout(() => {
+          typeCharIndex = 0;
+          typeLineIndex = (typeLineIndex + 1) % typeLines.length;
+          typewriterStep();
+        }, 2000);
+      }
+    }
+
+    const quoteData = [
+      {
+        tag: "beauty",
+        text: "Your smile is my favorite place. Even on my worst days, one look at you and everything feels soft again."
+      },
+      {
+        tag: "cute",
+        text: "You’re not just cute, you’re the kind of cute that makes my heart do a little happy dance every time I see you."
+      },
+      {
+        tag: "in my eyes",
+        text: "You’ll never see yourself the way I see you – but if you could, you’d finally understand how magical you are."
+      },
+      {
+        tag: "all of you",
+        text: "From your messy hair to your sleepy face to your loud laugh – every little thing about you is my favorite thing."
+      },
+      {
+        tag: "soft place",
+        text: "The world can be loud and heavy, but you are the soft place my heart always runs back to."
+      },
+      {
+        tag: "eyes",
+        text: "Every time you look at me, it feels like my heart is being chosen all over again."
+      },
+      {
+        tag: "angel",
+        text: "If I had to describe you in one word, it would still feel too small. Even ‘angel’ doesn’t fully cover it."
+      },
+      {
+        tag: "favorite human",
+        text: "Out of 8 billion people, it’s your laugh, your face, your chaos that I’m addicted to. That has to mean something."
+      }
+    ];
+
+    const loveNotes = [
+      "If I could choose anyone in the world, I’d still choose you. In every lifetime, in every universe, it’s you.",
+      "No text message, no call, no paragraph could ever fully say it – but I hope you feel it: I’m so in love with you.",
+      "I don’t just miss you. I miss your voice, your laugh, your eyes, your chaos… I miss us in the same place.",
+      "One day I’ll look back at this distance, hug you tight and say: ‘We actually survived that. Together.’",
+      "Even when I’m quiet, I’m still thinking about you. You live rent-free in my heart and my mind, 24/7.",
+      "You are my safe place, my comfort person, my softest ‘home’, no matter how far you are.",
+      "The universe really did a beautiful thing the day it put you in my life."
+    ];
+
+    const secretWord = "forever";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const quoteCards = document.querySelectorAll(".quote-card");
+      const shuffled = [...quoteData].sort(() => Math.random() - 0.5);
+
+      quoteCards.forEach((card, idx) => {
+        if (!shuffled[idx]) return;
+        const tagEl = card.querySelector(".quote-tag");
+        const textEl = card.querySelector("p");
+        tagEl.textContent = shuffled[idx].tag;
+        textEl.textContent = shuffled[idx].text;
+      });
+
+      typewriterStep();
+
+      const audio = document.getElementById("bgMusic");
+      const label = document.getElementById("musicLabel");
+
+      // Try autoplay once
+      if (audio) {
+        audio.muted = false; // make sure not muted
+        audio
+          .play()
+          .then(() => {
+            isPlaying = true;
+            if (label) label.textContent = 'Playing “death bed” 💗';
+          })
+          .catch(() => {
+            isPlaying = false;
+            if (label) label.textContent = 'Tap to play “death bed”';
+          });
+      }
+
+      setTimeout(() => {
+        sendCenterKisses();
+      }, 1200);
+
+      const photos = document.querySelectorAll(".photo-card img, .memory-card img");
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImg");
+
+      photos.forEach((img) => {
+        img.addEventListener("click", (e) => {
+          openModal(e.target.src);
+          spawnKisses(e.clientX, e.clientY);
+        });
+      });
+
+      modalImg.addEventListener("click", (e) => {
+        spawnKisses(e.clientX, e.clientY);
+      });
+    });
+
+    function showRandomNote() {
+      const note = loveNotes[Math.floor(Math.random() * loveNotes.length)];
+      document.getElementById("noteText").textContent = note;
+    }
+
+    // Button: always restart from beginning and play
+    function playFromStart() {
+      const audio = document.getElementById("bgMusic");
+      const label = document.getElementById("musicLabel");
+      if (!audio) return;
+
+      audio.muted = false;      // make sure it's not muted
+      audio.currentTime = 0;    // restart
+      audio
+        .play()
+        .then(() => {
+          isPlaying = true;
+          if (label) label.textContent = 'Playing “death bed” 💗';
+        })
+        .catch(() => {
+          isPlaying = false;
+          if (label) label.textContent = 'Tap again if it didn’t start 🎧';
+        });
+    }
+
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+
+    function openModal(src) {
+      modalImg.src = src;
+      modal.classList.add("active");
+    }
+
+    function closeModal(event) {
+      if (event) event.stopPropagation();
+      modal.classList.remove("active");
+    }
+
+    function backdropClick(event) {
+      if (event.target === modal) {
+        closeModal(event);
+      }
+    }
+
+    function spawnKisses(x, y) {
+      const count = 8;
+      for (let i = 0; i < count; i++) {
+        const kiss = document.createElement("span");
+        kiss.className = "kiss";
+        kiss.textContent = "💋";
+
+        const offsetX = (Math.random() - 0.5) * 80;
+        const offsetY = (Math.random() - 0.5) * 20;
+
+        kiss.style.left = x + offsetX + "px";
+        kiss.style.top = y + offsetY + "px";
+
+        document.body.appendChild(kiss);
+
+        setTimeout(() => {
+          kiss.remove();
+        }, 1400);
+      }
+    }
+
+    function sendCenterKisses() {
+      const x = window.innerWidth / 2;
+      const y = window.innerHeight / 2;
+      spawnKisses(x, y);
+    }
+
+    function unlockSecret() {
+      const input = document.getElementById("secretInput");
+      const error = document.getElementById("secretError");
+      const message = document.getElementById("secretMessage");
+
+      const value = (input.value || "").trim().toLowerCase();
+      if (!value) {
+        error.textContent = "Type something first, baby 🥺";
+        return;
+      }
+
+      if (value === secretWord.toLowerCase()) {
+        error.textContent = "";
+        message.classList.add("show");
+      } else {
+        error.textContent = "Almost there… try again 😉";
+      }
+    }
+  </script>
+</body>
+</html>
